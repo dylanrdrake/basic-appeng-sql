@@ -18,7 +18,7 @@ Make sure you have pip2.7 installed (pip3 will install the wrong version of urll
 
 Edit the env_config.py file by filling in all of the database variables of you Cloud SQL instance. (Make sure to add this file in your .gitignore so that you don't upload any sensitive passwords to a public github repositor)
 
-In the Google Cloud Console, create OAuth credentials in API Manager > Credentials.  Select OAuth Client ID from the Credentials dropdown.  Then add these callback URLs to the Authorized redirect URLs section: http://localhost:8080/oauth2callback, https://<app-id>.appspot.com/oauth2callback
+In the Google Cloud Console, create OAuth credentials in API Manager > Credentials.  Select OAuth Client ID from the Credentials dropdown.  Then add these callback URLs to the Authorized redirect URLs section: http://localhost:8080/oauth2callback, https://\<app-id\>.appspot.com/oauth2callback
 
 
 
