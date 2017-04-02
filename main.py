@@ -128,7 +128,7 @@ def db_disconnect(exception):
 
 
 @app.route('/login_screen')
-def login_screen(message=None):
+def login_screen():
     return render_template('login.html')
 
 
@@ -141,12 +141,9 @@ def login():
 
 
 @app.route('/logout')
-def logout(message=None):
+def logout():
     session.clear()
-    if request.args.get('message'):
-        message = request.args.get('message')
-    return redirect(url_for('login_screen',
-            message=message))
+    return redirect(url_for('login_screen'))
 
 
 
