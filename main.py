@@ -103,10 +103,19 @@ def db_connect():
     if (os.getenv('SERVER_SOFTWARE') and \
             os.getenv('SERVER_SOFTWARE').startswith('Google App Engine/')):
         g.conn = mysql.connect(unix_socket='/cloudsql/'+creds['_INSTANCE_NAME'],
+                               db=creds['dbbase'],
                                user=creds['dbuser'],
                                passwd=creds['dbpass'])
     else:
-        g.conn = mysql.connect(host='127.0.0.1',
+        # this is the database used when running dev_appserver.py
+        # install cloud_sql_proxy.py as described in google's docs
+        # g.conn = mysql.connect(host='127.0.0.1',
+        #                        user=creds['dbuser'],
+        #                        passwd=creds['dbpass'])
+        # OR
+        # you can just use the parameters of your cloud sql instance
+        g.conn = mysql.connect(host=creds['dbhost'],
+                               db=creds['dbbase'],
                                user=creds['dbuser'],
                                passwd=creds['dbpass'])
 
