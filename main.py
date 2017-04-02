@@ -114,7 +114,7 @@ def db_connect():
         #                        user=creds['dbuser'],
         #                        passwd=creds['dbpass'])
         # OR
-        # you can just use the host ip of your cloud sql instance
+        # you can just include the host ip of your cloud sql instance
         g.conn = mysql.connect(host=creds['dbhost'],
                                db=creds['dbbase'],
                                user=creds['dbuser'],
@@ -129,10 +129,7 @@ def db_disconnect(exception):
 
 @app.route('/login_screen')
 def login_screen(message=None):
-    if request.args.get('message'):
-        message = request.args.get('message')
-    return render_template('login.html',
-            message=message)
+    return render_template('login.html')
 
 
 
