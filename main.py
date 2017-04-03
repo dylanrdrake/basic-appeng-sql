@@ -10,6 +10,7 @@ import os
 import json
 from env_config import creds, google_auth_env
 from functools import wraps
+from urllib2 import Request, urlopen, URLError
 
 
 
@@ -47,7 +48,6 @@ def auth_check(route):
             return redirect(url_for('logout'))
 
         access_token = access_token[0]
-        from urllib2 import Request, urlopen, URLError
 
         headers = {'Authorization': 'OAuth '+access_token}
         req = Request('https://www.googleapis.com/oauth2/v1/userinfo',
