@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Import the Flask Framework
-from flask import Flask,url_for,redirect,request,render_template,jsonify,g,session
+from flask import Flask,url_for,redirect,request,render_template,g,session
 # Oauth imports
 from flask_oauth import OAuth
 # Necessary packages
