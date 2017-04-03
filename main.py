@@ -70,13 +70,6 @@ def auth_check(route):
         session['user_name'] = user_info['name']
         session['user_pic'] = user_info['picture']
 
-
-        if session.get('user_email') != None:
-            user_email = session.get('user_email')
-        else:
-            return redirect(url_for('logout'))
-
-
         return route(*args, **kwargs)
 
     return route_wrapper
