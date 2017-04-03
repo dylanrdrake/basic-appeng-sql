@@ -5,7 +5,6 @@ from flask import Flask,url_for,redirect,request,render_template,g,session
 # Oauth imports
 from flask_oauth import OAuth
 # Necessary packages
-from urllib2 import Request, urlopen, URLError
 import MySQLdb as mysql
 import os
 import json
