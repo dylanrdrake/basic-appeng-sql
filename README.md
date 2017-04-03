@@ -31,3 +31,7 @@ Then use a browser to navigate to the local host specified in the output and cli
 **Deploy**
 
 gcloud app deploy app.yaml
+
+
+**TODO**
+change authentication to Firebase
