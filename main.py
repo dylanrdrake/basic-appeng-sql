@@ -107,6 +107,7 @@ def db_connect():
         #                        passwd=creds['dbpass'])
         # OR
         # you can just include the host ip of your cloud sql instance
+        # and grant access to your dev ip address in Access Control
         g.conn = mysql.connect(host=creds['dbhost'],
                                db=creds['dbbase'],
                                user=creds['dbuser'],
